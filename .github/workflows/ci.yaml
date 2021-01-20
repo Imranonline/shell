@@ -14,5 +14,4 @@ jobs:
       run: |
               echo $GIT_COMMIT_SHORT
               apiResults=$(curl https://reqres.in/api/products/3)
-              echo $apiResults
-              echo $apiResults.response
+              echo $apiResults | json_pp -json_opt pretty,canonical
