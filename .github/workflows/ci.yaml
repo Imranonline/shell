@@ -13,6 +13,6 @@ jobs:
     - name: Pack Module 
       run: |
               echo $GIT_COMMIT_SHORT
-              apiResults=$(curl https://reqres.in/api/products/$MODULE_VERSION)
+              apiResults=$(curl https://reqres.in/api/products/'$MODULE_VERSION')
               echo $apiResults
               
