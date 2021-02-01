@@ -4,7 +4,7 @@ on: [push]
 env:
       MODULE_ORG : admin
       MODULE_NAME : workspace-factory-gcp
-      MODULE_VERSION : 1.0.0-test-ignore-1
+      MODULE_VERSION : 3
 jobs:
   pack:
     runs-on: ubuntu-18.04
@@ -13,6 +13,6 @@ jobs:
     - name: Pack Module 
       run: |
               echo $GIT_COMMIT_SHORT
-              apiResults=$(curl https://reqres.in/api/products/3)
-              #echo $apiResults | json_pp -json_opt pretty,canonical
-              echo $apiResults | jq -r '.support.url'
+              apiResults=$(curl https://reqres.in/api/products/$MODULE_VERSION)
+              echo $apiResults
+              
